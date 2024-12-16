@@ -26,8 +26,9 @@ if(isset($_POST['add_book_btn'])) {
 </head>
 <body>
        <div style="margin: 5px auto">
-        <form method="POST">
-            
+        <form method="POST" enctype="multipart/form-data">
+
+            <input type = "file" name = 'image'><br><br>
             <input type="title" name="title" placeholder="Enter title" >
             <br/> <br>
             
