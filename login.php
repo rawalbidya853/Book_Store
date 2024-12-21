@@ -11,14 +11,15 @@
 
        $query = mysqli_query($conn,$sql);
    
-       
-           echo "<script>alert('data inserted sucessfully')</script>";
+       if ($query->num_rows !=0){
+          
+       echo "<script>alert('data inserted sucessfully')</script>";
            header('location:orders.php');
        } else {
            echo "<script>alert('Invalid Credential Please Check Email and Password')</script>";
    
        }
-   
+    }
 
 
 ?>

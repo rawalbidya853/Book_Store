@@ -39,7 +39,7 @@ $exe_query = mysqli_query($conn, $query);
                 <span id="msg"> </span>
                 <table class="table">
                     <tr>
-                        <th>Id</th>
+                        <th>user_Id</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Password</th>

@@ -4,13 +4,12 @@ include('dbconnection.php');
 if(isset($_POST['Submit'])) {
 
     $user_id = $_POST['user_id'];
-    $order_Date = $_POST['order_Date'];
     $total_amount = $_POST['total_amount'];
 
  
 
 
-    $query = mysqli_query($conn, "insert into orders(user_id, order_Date, total_amount,) Values ('$user_id', '$order_Date',$total_amount)");
+    $query = mysqli_query($conn, "insert into orders(user_id, total_amount,) Values ('$user_id','$total_amount')");
 
     if($query){
        echo "<script>alert('data inserted successfully')</script>";
@@ -59,9 +58,6 @@ if(isset($_POST['Submit'])) {
          <label for="User_id">user_id:</label>
         <input type="text" Name="user_id"/>
             <br /> <br />
-            <label for="order_Date">order_Date:</label>
-            <input type="text" Name="order_Date">
-            <br><br>
              
             <label for="total_amount">total_amount:</label>
             <input type="text" Name="total_amount"><br><br>
@@ -70,36 +66,8 @@ if(isset($_POST['Submit'])) {
             
         </form>
     </div>
-          <!-- </section>
 
 
-          <div class="products-container">
-          <div class="box">
-            <img src="images/apple.jpg" alt="">
-            <span>fresh items</span>
-            <h2>farm fresh organi<br>fruits 250g</h2>
-            <h3 class="price">$7.99<span>kg</span></h3>
-            <i class='bx bx-heart' ></i>
-            <span class="discount">-25%</span>
-</div>
 
-<div class="box">
-            <img src="images/pear.jpg" alt="">
-            <span>fresh items</span>
-            <h2>farm fresh organi<br>fruits 250g</h2>
-            <h3 class="price">$7.99<span>kg</span></h3>
-            <i class='bx bx-heart' ></i>
-            <span class="discount">-25%</span>
-</div>
-
-<div class="box">
-            <img src="images/mango.jpg" alt="">
-            <span>fresh items</span>
-            <h2>farm fresh organi<br>fruits 250g</h2>
-            <h3 class="price">$7.99<span>kg</span></h3>
-            <i class='bx bx-heart' ></i>
-            <span class="discount">-25%</span>
-</div>
-</div> -->
 </body>
 </html>

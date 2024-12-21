@@ -87,7 +87,7 @@ $result = mysqli_query($conn,$query);
      
     </div>
     <div class="carousel-item">
-      <img src="image/img1.jpg" class="d-block w-100" alt="...">
+      <img src="image/logo.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
     <img src="image/logo.jpg" style = "height: 100px; weight: 100px;" >
@@ -106,18 +106,28 @@ $result = mysqli_query($conn,$query);
           
 <div class="grid-container">
             <div class="main">
-
+              
+            <span style="float:left;">
+            <?php if (isset($_GET['alert'])){ ?>
+                    <h3> order Success, Thank You.</h3>
+            <?php } ?>
+        </span>
             <?php
             while($row = mysqli_fetch_assoc($result))
           {?>
             
          <div class="item">
-         <img src="imags/img2.jpg" class="d-block w-100" alt="...">
+         <td><img src="<?php echo $row['image']; ?>" alt="Book Image" width="100"></td>
          
         <h5> Title :<?php echo $row['title']; ?></h5>
         <h5> Author :<?php echo $row ['author']; ?></h5>
         <h5> Price : <?php echo $row ['price']; ?></h5>
-        <a href="#" class="btn btn-primary" style="margin-top:25px;"> Book</a>
+      
+                        <form action="orders.php?form=orderForm" method="POST">
+                             <input type="number" name="userid" value="<?php echo $_SESSION['userid']; ?>" hidden>
+                            <input type="number"name="qty" class="form-control" placeholder="Qty" required>
+                            <br>
+                            <input type="submit"name="order_btn" value="order">
           </div>
     <?php }?>
     </div>

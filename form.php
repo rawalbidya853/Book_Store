@@ -27,7 +27,7 @@
                 <a href="viewuser.php">View Users</a>
 
                 <!-- passing form data to action.php where GET value  form is add_user and method is post -->
-                <form action="login.php" method="post">
+                <form action="viewuser.php" method="post">
 
                     <div class="form-group">
                         <label>FullName</label>
